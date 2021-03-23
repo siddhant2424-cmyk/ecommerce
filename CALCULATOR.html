@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-image: url("https://th.bing.com/th/id/OIP.D6lZX_7xGTPwBbrwaZxbhAHaEo?pid=Api&rs=1");
+            background-size: cover;
+            margin-left : 400px;
+            margin-top: 150px;
+            border: none;
+        }
+        #a{
+           height: 60px;
+           width:105px;
+           background-color:rgba(255, 0, 0,0.829);
+           font-size: 30px;
+           border: none;
+           transition: 0.5s ease-out;
+        }
+        #a:hover,#b:hover,#c:hover{
+           height: 60px;
+           width:105px;
+           background-color:rgb(255, 0, 0);
+           font-size: 30px;
+           border: 2px solid yellow;
+           box-shadow:  3px,3px,3px black;
+        }
+        #b{
+            height: 60px;
+            width:105px;
+            background-color:rgba(255, 0, 0,0.829);
+            font-size: 30px;
+            border: none;
+            transition: 0.5s ease-out;
+        }
+        #c{
+            height: 60px;
+            width:105px;
+            background-color:rgba(255, 0, 0,0.829);
+            font-size: 30px;
+            border: none;
+            transition: 0.5s ease-out;
+        }
+        #d{
+            height: 70px;
+            width: 425px;
+            background-color: blue;
+            font-size: 30px;
+            color:red ;
+            border: none;
+            cursor:not-allowed;
+            text-align: right;
+            
+        }
+    </style>
+</head>
+<body>
+    <input type="text" id="d" placeholder="0">
+    <table>
+        <tr>
+            <td>
+                <button id="a" onclick="takeInput(7)">7</button>
+            </td>
+            <td>
+                <button id="a" onclick="takeInput(8)">8</button>
+            </td>
+            <td>
+                <button id="a" onclick="takeInput(9)">9</button>
+            </td>
+            <td>
+                <button id="b" onclick="takeInput('+')">+</button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button id="a" onclick="takeInput(4)">4</button>
+            </td>
+            <td>
+                <button id="a" onclick="takeInput(5)">5</button>
+            </td>
+            <td>
+                <button id="a" onclick="takeInput(6)">6</button>
+            </td>
+            <td>
+                <button id="b" onclick="takeInput('*')">x</button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button id="a" onclick="takeInput(1)">1</button>
+            </td>
+            <td>
+                <button id="a" onclick="takeInput(2)">2</button>
+            </td>
+            <td>
+                <button id="a" onclick="takeInput(3)">3</button>
+            </td>
+            <td>
+                <button id="b" onclick="takeInput('-')">-</button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button id="c" onclick="clearScreen()">C</button>
+            </td>
+            <td>
+                <button id="a" onclick="takeInput(0)">0</button>
+            </td>
+            <td>
+                <button id="c" onclick="calculateValue()">=</button>
+            </td>
+            <td>
+                <button id="b" onclick="takeInput('/')">/</button>
+            </td>
+        </tr>
+    </table>
+    <script>
+        // var num;
+        function takeInput(num){
+            document.getElementById("d").value = document.getElementById("d").value+num;
+        }
+        function clearScreen(){
+            document.getElementById("d").value = "";
+        }
+        function calculateValue(){
+            var expression = document.getElementById("d").value;
+            document.getElementById("d").value = eval(expression);
+        }   
+    </script>
+</body>
+</html>
